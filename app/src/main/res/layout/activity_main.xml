@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#0A0E17">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp">
+
+        <!-- Header Title -->
+        <TextView
+            android:id="@+id/tvHeaderTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Choose your role"
+            android:textColor="#FFFFFF"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- PLAYER CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardPlayer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#121824"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="#C0ED37"
+            app:strokeWidth="1.5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeaderTitle">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Paddle Icon -->
+                <ImageView
+                    android:id="@+id/ivPaddle"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:contentDescription="Player Icon"
+                    android:src="@drawable/ic_paddle"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- "I am a" Header -->
+                <TextView
+                    android:id="@+id/tvPlayerSubHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="I am a"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/ivPaddle"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- "Player" Header -->
+                <TextView
+                    android:id="@+id/tvPlayerTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Player"
+                    android:textColor="#C0ED37"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivPaddle"
+                    app:layout_constraintTop_toBottomOf="@id/tvPlayerSubHeader" />
+
+                <!-- Description -->
+                <TextView
+                    android:id="@+id/tvPlayerDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Track your progress, improve your game and achieve your goals."
+                    android:textColor="#D0D0D0"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivPaddle"
+                    app:layout_constraintTop_toBottomOf="@id/tvPlayerTitle" />
+
+                <!-- Bullet Points List -->
+                <LinearLayout
+                    android:id="@+id/llPlayerBullets"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/btnPlayerArrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvPlayerDesc">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✓ Track AI-segmented performance"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="✓ Review automated rally breakdowns"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="✓ Follow skill roadmap"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="✓ Book sessions &amp; track progress"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Arrow Action Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnPlayerArrow"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:cardBackgroundColor="#C0ED37"
+                    app:cardCornerRadius="24dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="➔"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- COACH CARD -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCoach"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="#121824"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="#4D82F3"
+            app:strokeWidth="1.5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardPlayer">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp">
+
+                <!-- Clipboard Icon -->
+                <ImageView
+                    android:id="@+id/ivClipboard"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:contentDescription="Coach Icon"
+                    android:src="@drawable/ic_clipboard"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- "I am a" Header -->
+                <TextView
+                    android:id="@+id/tvCoachSubHeader"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="I am a"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@id/ivClipboard"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!-- "Coach" Header -->
+                <TextView
+                    android:id="@+id/tvCoachTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Coach"
+                    android:textColor="#4D82F3"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/ivClipboard"
+                    app:layout_constraintTop_toBottomOf="@id/tvCoachSubHeader" />
+
+                <!-- Description -->
+                <TextView
+                    android:id="@+id/tvCoachDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:text="Manage student rosters, assign data-driven roadmaps, and track performance analytics."
+                    android:textColor="#D0D0D0"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ivClipboard"
+                    app:layout_constraintTop_toBottomOf="@id/tvCoachTitle" />
+
+                <!-- Bullet Points List -->
+                <LinearLayout
+                    android:id="@+id/llCoachBullets"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toStartOf="@id/btnCoachArrow"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvCoachDesc">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="✓ Manage players"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="✓ Schedule &amp; manage sessions"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="✓ Analyze player performance"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="✓ Grow your coaching business"
+                        android:textColor="#CCCCCC"
+                        android:textSize="11sp" />
+                </LinearLayout>
+
+                <!-- Arrow Action Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnCoachArrow"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    app:cardBackgroundColor="#4D82F3"
+                    app:cardCornerRadius="24dp"
+                    app:strokeWidth="0dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="➔"
+                        android:textColor="#000000"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
